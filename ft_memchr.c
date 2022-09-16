@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: baltes-g <baltes-g@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/14 16:53:20 by baltes-g          #+#    #+#             */
-/*   Updated: 2022/09/16 18:09:22 by baltes-g         ###   ########.fr       */
+/*   Created: 2022/09/16 15:42:26 by baltes-g          #+#    #+#             */
+/*   Updated: 2022/09/16 15:45:25 by baltes-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	*memchr(const void *s, int c, size_t n)
 {
-	size_t	i;
+	size_t	x;
 
-	i = 0;
-	while (i < n)
+	x = 0;
+	while (x < n)
 	{
-		*((char *)(s + i)) = 48;
-		++i;
+		if ((int)*s == c)
+			return ((char *)s);
+		++s;
+		++x;
 	}
+	return (NULL);
 }

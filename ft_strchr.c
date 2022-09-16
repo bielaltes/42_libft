@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: baltes-g <baltes-g@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/14 16:53:20 by baltes-g          #+#    #+#             */
-/*   Updated: 2022/09/16 18:09:22 by baltes-g         ###   ########.fr       */
+/*   Created: 2022/09/16 15:14:53 by baltes-g          #+#    #+#             */
+/*   Updated: 2022/09/16 15:15:25 by baltes-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+                                         
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+char	*strchr(const char *s, int c)
 {
-	size_t	i;
-
-	i = 0;
-	while (i < n)
+	while (*s != '\0')
 	{
-		*((char *)(s + i)) = 48;
-		++i;
+		if ((int)*s == c)
+			return ((char *)s);
+		++s;
 	}
+	if (c == '\0')
+		return ((char *)s);
+	return (NULL);
 }

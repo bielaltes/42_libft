@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 void	*memmmove(void *dst, const void *src, size_t len)
 {
 

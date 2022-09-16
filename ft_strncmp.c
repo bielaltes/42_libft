@@ -6,13 +6,13 @@
 /*   By: baltes-g <baltes-g@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 12:55:37 by baltes-g          #+#    #+#             */
-/*   Updated: 2022/07/15 12:47:20 by baltes-g         ###   ########.fr       */
+/*   Updated: 2022/09/16 15:42:11 by baltes-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <string.h>
-#include <stdio.h>
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+#include "libft.h"
+
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	if (n == 0)
 	{
