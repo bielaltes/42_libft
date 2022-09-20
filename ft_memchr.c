@@ -19,7 +19,7 @@ void	*memchr(const void *s, int c, size_t n)
 	x = 0;
 	while (x < n)
 	{
-		if ((int)*s == c)
+		if (*((int*)s) == c)
 			return ((char *)s);
 		++s;
 		++x;

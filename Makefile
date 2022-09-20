@@ -29,7 +29,7 @@ SRCS =	ft_bzero.c		\
 		ft_strlcat.c	\
 		ft_strrchr.c
 
-OBJS	=	$(SRCS:.c= .o)
+OBJS	=	$(SRCS:.c=.o)
 
 NAME	=	libft.a
 
@@ -37,15 +37,25 @@ LIB		=	ar rcs
 
 INC		=	libft.h
 
+RM		=	rm -rf
+
+CC		=	gcc
 FLAGS	=	-Wall -Wextra -Werror
 
 all:	$(NAME)
 
-$(NAME): $(OBJS) $(INC)
+$(NAME): 
+	${CC} ${CFLAGS} -c -I $(INC) $(SRCS)
 	$(LIB) $(NAME) $(OBJS)
+	ranlib $(NAME)
 
-%.c: %.o
-	gcc $(FLAGS) -c -o $@ $<
+clean:
+		${RM} ${OBJS}
+
+fclean:	clean
+		${RM} ${NAME}
+
+re:		fclean all
 
 .PHONY: all clean fclean re 
 
