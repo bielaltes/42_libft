@@ -6,13 +6,13 @@
 /*   By: baltes-g <baltes-g@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 10:08:24 by baltes-g          #+#    #+#             */
-/*   Updated: 2022/09/21 12:34:37 by baltes-g         ###   ########.fr       */
+/*   Updated: 2022/09/21 15:46:46 by baltes-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	trobat(char *src, char *to_find, int i, int len)
+int	trobat(char *src, char *to_find, int i, unsigned int len)
 {
 	while (*to_find != '\0')
 	{
@@ -44,7 +44,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	while (*haystack != '\0' && i < len)
 	{
-		b = trobat((char *)haystack, (char *)needle, (int)i, (int)len);
+		b = trobat((char *)haystack, (char *)needle, (int)i, (unsigned int)len);
 		if (b == 0)
 		{
 			++haystack;
