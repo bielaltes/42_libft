@@ -6,13 +6,13 @@
 /*   By: baltes-g <baltes-g@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 18:44:15 by baltes-g          #+#    #+#             */
-/*   Updated: 2022/09/15 18:45:37 by baltes-g         ###   ########.fr       */
+/*   Updated: 2022/09/21 09:30:57 by baltes-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	tolower(int c)
+int	ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')
 		return (c + 'a' - 'A');

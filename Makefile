@@ -6,7 +6,7 @@
 #    By: baltes-g <baltes-g@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/16 17:10:25 by baltes-g          #+#    #+#              #
-#    Updated: 2022/09/16 18:15:13 by baltes-g         ###   ########.fr        #
+#    Updated: 2022/09/21 12:41:25 by baltes-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,10 @@ SRCS =	ft_bzero.c		\
 		ft_isascii.c	\
 		ft_memcpy.c		\
 		ft_strlcat.c	\
-		ft_strrchr.c
+		ft_strrchr.c	\
+		ft_strnstr.c	\
+		ft_atoi.c		\
+		ft_memcmp.c
 
 OBJS	=	$(SRCS:.c=.o)
 

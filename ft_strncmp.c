@@ -6,7 +6,7 @@
 /*   By: baltes-g <baltes-g@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 12:55:37 by baltes-g          #+#    #+#             */
-/*   Updated: 2022/09/16 15:42:11 by baltes-g         ###   ########.fr       */
+/*   Updated: 2022/09/21 09:26:12 by baltes-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	if (n == 1)
 	{
-		return (*s1 - *s2);
+		return ((unsigned char)*s1 - (unsigned char)*s2);
 	}	
 	else if (*s1 == '\0' && *s2 == '\0')
 	{
@@ -34,7 +34,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	else
 	{
-		return (*s1 - *s2);
+		return ((unsigned char)*s1 - (unsigned char)*s2);
 	}
 }
 /*int main(void)
