@@ -6,7 +6,7 @@
 #    By: baltes-g <baltes-g@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/16 17:10:25 by baltes-g          #+#    #+#              #
-#    Updated: 2022/09/21 15:54:58 by baltes-g         ###   ########.fr        #
+#    Updated: 2022/09/22 20:09:31 by baltes-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,10 @@ SRCS =	ft_bzero.c		\
 		ft_atoi.c		\
 		ft_memcmp.c		\
 		ft_calloc.c		\
-		ft_strdup.c
+		ft_strdup.c		\
+		ft_substr.c		\
+		ft_strjoin.c	\
+		ft_strtrim.c
 
 OBJS	=	$(SRCS:.c=.o)
 
@@ -46,7 +49,7 @@ RM		=	rm -rf
 
 CC		=	gcc
 
-FLAGS	=	-Wall -Wextra -Werror
+CFLAGS	=	-Wall -Wextra -Werror
 
 all:	$(NAME)
 

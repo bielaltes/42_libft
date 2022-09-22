@@ -6,7 +6,7 @@
 /*   By: baltes-g <baltes-g@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 10:08:24 by baltes-g          #+#    #+#             */
-/*   Updated: 2022/09/21 15:46:46 by baltes-g         ###   ########.fr       */
+/*   Updated: 2022/09/22 18:11:26 by baltes-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	trobat(char *src, char *to_find, int i, unsigned int len)
 		}
 		++i;
 	}
-	if (i > len)
+	if ((unsigned int)i > len)
 		return (0);
 	return (1);
 }
