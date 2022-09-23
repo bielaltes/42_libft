@@ -6,7 +6,7 @@
 #    By: baltes-g <baltes-g@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/16 17:10:25 by baltes-g          #+#    #+#              #
-#    Updated: 2022/09/23 14:09:02 by baltes-g         ###   ########.fr        #
+#    Updated: 2022/09/23 15:54:53 by baltes-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,9 +60,13 @@ CFLAGS	=	-Wall -Wextra -Werror
 
 all:	$(NAME)
 
-$(NAME): 
-	${CC} ${CFLAGS} -c -I $(INC) $(SRCS)
-	$(LIB) $(NAME) $(OBJS)
+$(OBJS): %.o:%.c
+	@echo "Compilant $@" 
+	@$(CC) $(CFLAGS) -I $(INC) -c $< -o $@
+
+$(NAME): $(OBJS)
+	@echo "Creant $@"
+	@$(LIB) $(NAME) $(OBJS)
 
 clean:
 		${RM} ${OBJS}

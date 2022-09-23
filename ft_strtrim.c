@@ -6,7 +6,7 @@
 /*   By: baltes-g <baltes-g@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 19:50:23 by baltes-g          #+#    #+#             */
-/*   Updated: 2022/09/23 13:18:01 by baltes-g         ###   ########.fr       */
+/*   Updated: 2022/09/23 16:07:32 by baltes-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,11 @@
 int	numcharinstr(const char *s1, char c)
 {
 	int	sum;
+	int	trobat;
 
+	trobat = 0;
 	sum = 0;
-	while (*s1 != '\0')
+	while (!trobat && *s1 != '\0')
 	{
 		if (*s1 == c)
 			++sum;
@@ -54,17 +56,20 @@ char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*new;
 	int		i;
+	int		trobat;
 
 	i = 0;
+	trobat = 0;
 	new = malloc(sizeof(char) * (ft_strlen(s1) - countin(s1, set) + 1));
 	if (!new)
 		return (NULL);
-	while (*s1 != '\0')
+	while (!trobat && *s1 != '\0')
 	{
 		if (!charinstr(set, *s1))
 		{
 			new[i] = *s1;
 			++i;
+			trobat = 1;
 		}
 		++s1;
 	}
