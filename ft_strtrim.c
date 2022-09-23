@@ -6,7 +6,7 @@
 /*   By: baltes-g <baltes-g@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 19:50:23 by baltes-g          #+#    #+#             */
-/*   Updated: 2022/09/22 20:45:25 by baltes-g         ###   ########.fr       */
+/*   Updated: 2022/09/23 13:18:01 by baltes-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*new;
 	int		i;
-	int		over;
 
 	i = 0;
 	new = malloc(sizeof(char) * (ft_strlen(s1) - countin(s1, set) + 1));

@@ -6,7 +6,7 @@
 #    By: baltes-g <baltes-g@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/16 17:10:25 by baltes-g          #+#    #+#              #
-#    Updated: 2022/09/22 20:09:31 by baltes-g         ###   ########.fr        #
+#    Updated: 2022/09/23 14:09:02 by baltes-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,14 @@ SRCS =	ft_bzero.c		\
 		ft_strdup.c		\
 		ft_substr.c		\
 		ft_strjoin.c	\
-		ft_strtrim.c
+		ft_strtrim.c	\
+		ft_itoa.c		\
+		ft_strmapi.c	\
+		ft_striteri.c	\
+		ft_putchar_fd.c	\
+		ft_putstr_fd.c	\
+		ft_putendl_fd.c	\
+		ft_putnbr_fd.c
 
 OBJS	=	$(SRCS:.c=.o)
 
