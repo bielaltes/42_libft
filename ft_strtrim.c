@@ -12,67 +12,59 @@
 
 #include "libft.h"
 
-int	numcharinstr(const char *s1, char c)
+static int	count_start(char const *s1, char const *set)
 {
-	int	sum;
-	int	trobat;
+	int	len;
+	int	i;
+	int	encara;
 
-	trobat = 0;
-	sum = 0;
-	while (!trobat && *s1 != '\0')
+	encara = 1,
+	len = ft_strlen(s1);
+	i = 0;
+	while (i < len && encara)
 	{
-		if (*s1 == c)
-			++sum;
-		++s1;
+		if (ft_strchr(set, s1[i]) == 0)
+			encara = 0;
+		i++;
 	}
-	return (sum);
+	return (i);
 }
 
-int	charinstr(const char *set, char c)
+static int	count_end(const char *s1, const char *set)
 {
-	while (*set != '\0')
-	{
-		if (*set == c)
-			return (1);
-		++set;
-	}
-	return (0);
-}
+	int	len;
+	int	i;
+	int	encara;
 
-int	countin(const char *s1, const char *set)
-{
-	int	sum;
-
-	sum = 0;
-	while (*set != '\0')
+	encara = 1;
+	len = ft_strlen(s1);
+	i = 0;
+	while (i < len)
 	{
-		sum += numcharinstr(s1, *set);
-		++set;
+		if (ft_strchr(set, s1[len - i - 1]) == 0)
+			encara = 0;
+		i++;
 	}
-	return (sum);
+	return (len - i);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
+	int	start;
+	int	end;
 	char	*new;
-	int		i;
-	int		trobat;
 
-	i = 0;
-	trobat = 0;
-	new = malloc(sizeof(char) * (ft_strlen(s1) - countin(s1, set) + 1));
-	if (!new)
+	if (s1 == NULL)
 		return (NULL);
-	while (!trobat && *s1 != '\0')
-	{
-		if (!charinstr(set, *s1))
-		{
-			new[i] = *s1;
-			++i;
-			trobat = 1;
-		}
-		++s1;
-	}
-	new[i] = '\0';
+	if (set == NULL)
+		return (ft_strdup(s1));
+	start = count_start(s1, set);
+	end = count_end(s1, set);
+	if (start >= end)
+		return (ft_strdup(""));
+	new = malloc(sizeof(char) * (end - start + 1));
+	if (new == NULL)
+		return (NULL);
+	ft_strlcpy(new, s1 + start, end - start + 1);
 	return (new);
 }
