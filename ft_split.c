@@ -1,11 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: baltes-g <baltes-g@student.42barcel>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/26 17:50:10 by baltes-g          #+#    #+#             */
+/*   Updated: 2022/09/26 18:10:41 by baltes-g         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static int	count_words(char const *s, char c)
 {
-	int sum;
-	int in_word;
+	int	sum;
+	int	in_word;
 
-	i = 0;
+	sum = 0;
 	in_word = 0;
 	while (*s != '\0')
 	{
@@ -21,7 +33,7 @@ static int	count_words(char const *s, char c)
 	return (sum);
 }
 
-static char	*word_len(char const  *s, char c, int i)
+static int	word_len(char const *s, char c, int i)
 {
 	int	len;
 
@@ -34,11 +46,21 @@ static char	*word_len(char const  *s, char c, int i)
 	return (len);
 }
 
-
-char **ft_split(char const *s, char c)
+char	**malloc_error(char **new, int j)
 {
-	int	i;
-	int	j;
+	while (j >= 0)
+	{
+		free(new[j]);
+		--j;
+	}
+	free(new);
+	return (NULL);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	int		i;
+	int		j;
 	char	**new;
 
 	new = malloc(sizeof(char *) * (count_words(s, c) + 1));
@@ -50,13 +72,12 @@ char **ft_split(char const *s, char c)
 	{
 		while (s[i] == c)
 			i++;
-		new[j] = ft_substr(s, i, word_len(s, c, i))));
+		new[j] = ft_substr(s, i, word_len(s, c, i));
 		if (!new[j])
-			return (NULL);
+			return (malloc_error(new, j));
 		i += word_len(s, c, i);
 		++j;
 	}
-	new[j] = '\0';
+	new[j] = (NULL);
 	return (new);
-
 }

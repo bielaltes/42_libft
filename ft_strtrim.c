@@ -6,7 +6,7 @@
 /*   By: baltes-g <baltes-g@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 19:50:23 by baltes-g          #+#    #+#             */
-/*   Updated: 2022/09/23 16:07:32 by baltes-g         ###   ########.fr       */
+/*   Updated: 2022/09/26 17:49:36 by baltes-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,15 @@ static int	count_start(char const *s1, char const *set)
 	int	i;
 	int	encara;
 
-	encara = 1,
+	encara = 1;
 	len = ft_strlen(s1);
 	i = 0;
 	while (i < len && encara)
 	{
-		if (ft_strchr(set, s1[i]) == 0)
+		if (ft_strchr(set, s1[i]) == NULL)
 			encara = 0;
-		i++;
+		else
+			i++;
 	}
 	return (i);
 }
@@ -39,19 +40,20 @@ static int	count_end(const char *s1, const char *set)
 	encara = 1;
 	len = ft_strlen(s1);
 	i = 0;
-	while (i < len)
+	while (i < len && encara)
 	{
-		if (ft_strchr(set, s1[len - i - 1]) == 0)
+		if (ft_strchr(set, s1[len - i - 1]) == NULL)
 			encara = 0;
-		i++;
+		else
+			i++;
 	}
 	return (len - i);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int	start;
-	int	end;
+	int		start;
+	int		end;
 	char	*new;
 
 	if (s1 == NULL)
