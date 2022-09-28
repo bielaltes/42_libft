@@ -6,7 +6,7 @@
 #    By: baltes-g <baltes-g@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/16 17:10:25 by baltes-g          #+#    #+#              #
-#    Updated: 2022/09/26 19:46:09 by baltes-g         ###   ########.fr        #
+#    Updated: 2022/09/28 11:50:37 by baltes-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,7 +65,7 @@ LIB		=	ar rcs
 
 INC		=	libft.h
 
-RM		=	rm -rf
+RM		=	rm -f
 
 CC		=	gcc
 
@@ -89,7 +89,7 @@ clean:
 		${RM} ${OBJS} $(OBJS_BONUS)
 
 fclean:	clean
-		${RM} ${NAME} $(OBJS_BONUS)
+		${RM} ${NAME}
 
 re:		fclean all
 
